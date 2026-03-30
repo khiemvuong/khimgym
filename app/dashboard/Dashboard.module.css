@@ -1,0 +1,243 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.activeBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: all var(--transition-fast);
+  font-size: 0.875rem;
+}
+.activeBanner:hover {
+  background: rgba(124, 58, 237, 0.28);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+.activeBanner > span {
+  flex: 1;
+}
+
+.statsGrid {
+  margin-bottom: 0;
+}
+
+/* Stat card internals */
+.statIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--grad-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statSub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+}
+
+/* Main 2-col grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chartCard {
+  min-height: 320px;
+}
+
+/* Chart tooltip */
+.chartTooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.625rem 0.875rem;
+  box-shadow: var(--shadow-md);
+}
+.tooltipLabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+.tooltipValue {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent-primary-light);
+}
+
+/* Side column */
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Program card */
+.programName {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.programDays {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.875rem;
+}
+
+.dayChip {
+  padding: 0.375rem 0.625rem;
+  background: rgba(15, 22, 35, 0.8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.noProgramState {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+/* Recent logs */
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.recentItem:hover {
+  border-color: var(--border-hover);
+}
+
+.recentItemLeft {
+  flex: 1;
+}
+
+.recentDate {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.recentDayName {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.125rem;
+}
+
+.recentRight {
+  text-align: right;
+}
+
+.recentVolume {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-primary-light);
+}
+
+/* Empty state */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Total volume banner */
+.totalBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  margin-top: 1.5rem;
+}
+
+.totalLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.375rem;
+}
+
+.totalValue {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 900;
+  background: var(--grad-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.totalValue span {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.totalIcon {
+  font-size: 3rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.4));
+}
